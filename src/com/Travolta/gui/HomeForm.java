@@ -19,26 +19,29 @@ public class HomeForm extends Form{
 
     public HomeForm() {
         
-        setTitle("Home");
+        setTitle("Travolta");
         setLayout(BoxLayout.y());
         
-        add(new Label("Choose an option"));
-        Button btnAddTest = new Button("Add Test");
+        add(new Label("Travolta"));
         Button btnAddMaison = new Button("Add Maison");
-        Button btnAddQuestion = new Button("Add Question");
-        Button btnAddTask = new Button("Add Task");
-        Button btnListTasks = new Button("List Tasks");
+        Button btnAddReservation = new Button("Add Reservation");
+        Button btnListReservation = new Button("List Reservation");
          Button btnListMaison = new Button("List Maison");
 
-        Button btnListTests = new Button("List Tests");
-         Button btnListQuestions = new Button("List Questions");
-          Button btnTheTests = new Button("Passer un Test");
+       
         
       
         btnAddMaison.addActionListener(e-> new AddMaisonForm(this).show());
         btnListMaison.addActionListener(e-> new ListMaisonForm(this).show());
+       btnAddReservation.addActionListener(e-> new AddReservationMaison(this).show());
+       btnListReservation.addActionListener(e-> new ListReservationForm(this).show());
+
+
+
+
+
       
-        addAll(btnAddMaison,btnListMaison);
+        addAll(btnAddMaison,btnListMaison,btnAddReservation,btnListReservation);
         
         
     }

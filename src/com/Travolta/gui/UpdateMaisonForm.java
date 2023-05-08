@@ -22,12 +22,12 @@ import com.Travolta.services.ServiceMaison;
  */
 public class UpdateMaisonForm extends Form{
     public UpdateMaisonForm(Form previous, MaisonHote q,Form ListMaisonForm) {
-        setTitle("modifier question");
+        setTitle("modifier Maison");
         setLayout(BoxLayout.y());
-        TextField tfTitre = new TextField("","Titre maison");
-        TextField tfDescription= new TextField("","Description");
-        TextField tfAdresse = new TextField("","Adress");
-        TextField tfStatus = new TextField("","Status hebergement");
+        TextField tfTitre = new TextField(q.getTitre(),"Titre maison");
+        TextField tfDescription= new TextField(q.getDescription(),"Description");
+        TextField tfAdresse = new TextField(q.getAdresse(),"Adress");
+        TextField tfStatus = new TextField(q.getStatus_hebergement(),"Status hebergement");
         TextField tfChambre = new TextField("","Nombre de chambre");
         TextField tfPrix = new TextField("","prix");
          TextField tfImage = new TextField("","image");
@@ -52,7 +52,7 @@ public class UpdateMaisonForm extends Form{
                         q.setPrix(id2);
                         q.setImage(tfImage.getText());;
                         if ( new ServiceMaison().getInstance().updateMaison(q))
-                            Dialog.show("Success", "Connection accepted", new Command("Ok"));
+                            Dialog.show("Success", "Maison Modifier avec success", new Command("Ok"));
                         else
                             Dialog.show("ERROR", "Server error", new Command("OK"));
                     }catch (NumberFormatException e) {

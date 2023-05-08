@@ -48,7 +48,7 @@ public class AddMaisonForm extends Form{
                         MaisonHote m = new MaisonHote( tfTitre.getText(),Integer.parseInt(tfPrix.getText()),tfDescription.getText(),tfAdresse.getText(),tfStatus.getText(),Integer.parseInt(tfChambre.getText()),tfImage.getText());
                         if( ServiceMaison.getInstance().addMaison(m))
                         {
-                           Dialog.show("Success","Connection accepted",new Command("OK"));
+                           Dialog.show("Success","Maison ajouter aveec succéss",new Command("OK"));
                         }else
                             Dialog.show("ERROR", "Server error", new Command("OK"));
                     } catch (NumberFormatException e) {
